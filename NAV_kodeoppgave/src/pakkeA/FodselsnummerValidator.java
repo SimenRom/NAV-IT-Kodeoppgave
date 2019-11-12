@@ -7,12 +7,23 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * Statisk klasse som kan validere fødselsnummer.
+ * 
+ * Bruk metoden validerNummer(String nummer) for å validere eit nummer.
+ * 
+ * @author Simen Romstad
+ *
+ */
 public class FodselsnummerValidator {
 	public static void main(String[] args) {
 		System.out.println(validerNummer("12111995883"));
 	}
-
+	/**
+	 * 
+	 * @param nummeret du vil sjekke, gitt i ein String.
+	 * @return boolean om nummeret som er gitt er gyldig eller ikkje.
+	 */
 	public static boolean validerNummer(String nummer) {
 		if (nummer.length() == 11 && nummer.matches("[0-9]{11}")) {
 			String fodselsdato = nummer.substring(0, 6);
@@ -23,7 +34,11 @@ public class FodselsnummerValidator {
 		}
 		return false;
 	}
-
+	/**
+	 * 
+	 * @param fullt fødselsnummer
+	 * @return ein boolean om kontrollsifferene er gyldige
+	 */
 	private static boolean kontrollsiffer(String nummer) {
 		Integer[] tallrekkeA = { 3, 7, 6, 1, 8, 9, 4, 5, 2, 1 };
 		Integer[] tallrekkeB = { 5, 4, 3, 2, 7, 6, 5, 4, 3, 2, 1 };
@@ -40,7 +55,11 @@ public class FodselsnummerValidator {
 		}
 		return true;
 	}
-
+	/**
+	 * 
+	 * @param seks-sifret fødselsdato i formen 'ddMMyy'.
+	 * @return om datoen er en dato som finst eller ikkje.
+	 */
 	private static boolean erDatoEksisterende(String input) {
 		try {
 			SimpleDateFormat format = new SimpleDateFormat("ddMMyy");
@@ -53,7 +72,12 @@ public class FodselsnummerValidator {
 		}
 		return true;
 	}
-
+	/**
+	 * 
+	 * @param individnr, tre-sifret
+	 * @param seks-sifret fødselsdato i formen 'ddMMyy'
+	 * @return boolean om dato matcher individnummer
+	 */
 	private static boolean individnrMatcherDato(Integer individnr, String fodselsdato) {
 		Integer aar = Integer.parseInt(fodselsdato.substring(4, 6));
 		if (individnr <= 749 && individnr >= 500 && aar >= 54 && aar <= 99) {
