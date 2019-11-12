@@ -1,3 +1,6 @@
 # NAV-IT-Kodeoppgave
-Koden er ikkje ferdig enda. Frist er onsdag 13.11, og eg vil commite fleire commits før den tid.
-![JavaDoc as PNG](https://raw.githubusercontent.com/SimenRom/NAV-IT-Kodeoppgave/branch/JavaDocAsPNG.png)
+Prosjektet inneholder:
+* Ein fødselsnummer-validator med navn: FodselsnummerValidator.java
+* Ein JUnit-tester som tester for ekte og falske nummer: Tester.java
+* JavaDoc som forklarer klassen og metodene i prosjektet.
+![JavaDoc as PNG](JavaDocAsPNG.png)
