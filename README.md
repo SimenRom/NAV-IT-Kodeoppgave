@@ -1,4 +1,4 @@
-# NAV-IT-Kodeoppgave
+# Fødselsnummervalidator
 Prosjektet inneholder:
 * Ein fødselsnummer-validator: /NAV_kodeoppgave/src/pakkeA/FodselsnummerValidator.java
 * Ein JUnit-tester som tester for ekte og falske nummer: /NAV_kodeoppgave/src/tester/Tester.java
